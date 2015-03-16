@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ActionScanState">
+        <attr name="state_scan_add_to_start" format="boolean"/>
+    </declare-styleable>
+    
+    <declare-styleable name="ActionListState">
+        <attr name="state_list_longclick_twist" format="boolean"/>
+    </declare-styleable>
+</resources>
