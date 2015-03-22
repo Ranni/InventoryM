@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:weightSum="5">
+    
+    <LinearLayout 
+        android:layout_weight="3"
+        android:layout_width="match_parent"
+    	android:layout_height="0dp" 
+    	android:weightSum="5" 
+        android:orientation="vertical">
+        
+        <!-- Inventory Info -->
+        <LinearLayout 
+            android:layout_width="match_parent"
+	        android:layout_height="0dp" 
+	        android:layout_weight="2" 
+	        android:orientation="vertical">
+	         
+            <TextView
+		        android:layout_width="match_parent"
+	        	android:layout_height="0dp" 
+	        	android:layout_weight="1" 
+		        android:gravity="center" 
+		        android:background="@android:color/white"
+		        android:text="@string/scan_default_production_title"
+		        android:textColor="#000000" 
+		        android:textSize="36sp"  />
+            
+           <LinearLayout
+	            android:layout_width="match_parent"
+		        android:layout_height="30dp" 
+		        android:gravity="center"
+			    android:background="@android:color/white"
+		        android:orientation="horizontal" >
+		        <TextView
+			        android:layout_width="wrap_content"
+		        	android:layout_height="match_parent" 
+			        android:gravity="center" 
+			        android:background="@android:color/white"
+			        android:text="@string/scan_record_production_count"
+			        android:textColor="#000000" 
+			        android:textSize="22sp"  />
+		        <TextView android:id="@+id/scan_tv_record_count"
+			        android:layout_width="wrap_content"
+		        	android:layout_height="match_parent" 
+			        android:gravity="center" 
+			        android:background="@android:color/white" 
+			        android:layout_marginLeft="5dp"
+			        android:text="0"
+			        android:textColor="#ff0000" 
+			        android:textSize="22sp"  />
+		        <TextView
+			        android:layout_width="wrap_content"
+		        	android:layout_height="match_parent" 
+			        android:gravity="center" 
+			        android:background="@android:color/white"
+			        android:text="@string/scan_action_unit"
+			        android:textColor="#000000" 
+			        android:textSize="22sp"  />
+		        
+		        <TextView android:id="@+id/scan_tv_insert_action"
+			        android:layout_width="wrap_content"
+		        	android:layout_height="match_parent" 
+			        android:gravity="center" 
+			        android:layout_marginLeft="50dp"
+			        android:background="@android:color/white"
+			        android:text="@string/scan_insert_action_add"
+			        android:textColor="#000000" 
+			        android:textSize="22sp"  />
+
+		        <TextView
+		            android:id="@+id/scan_tv_insert_count"
+		            android:layout_width="wrap_content"
+		            android:layout_height="match_parent"
+		            android:background="@android:color/white"
+		            android:gravity="center" 
+		            android:layout_marginLeft="5dp"
+		            android:text="0"
+		            android:textColor="#ff0000"
+		            android:textSize="22sp" />
+
+		        <TextView
+			        android:layout_width="wrap_content"
+		        	android:layout_height="match_parent" 
+			        android:gravity="center" 
+			        android:background="@android:color/white"
+			        android:text="@string/scan_action_unit"
+			        android:textColor="#000000" 
+			        android:textSize="22sp"  />
+	        </LinearLayout>
+        </LinearLayout>
+        
+        <LinearLayout 
+            android:layout_marginTop="-2dp"
+            android:layout_weight="3"
+	        android:layout_width="match_parent"
+	    	android:layout_height="0dp" 
+	        android:orientation="horizontal" 
+	        android:background="@android:color/transparent">
+
+            <Button
+                android:id="@+id/scan_btn_add_count"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/selector_scan_btn_add" 
+                android:gravity="center" 
+                android:layout_gravity="center"
+                android:text="+"
+                android:textSize="80sp"
+                android:textColor="#000000" 
+                
+                android:onClick="btnAddCount"  />
+
+            <LinearLayout  
+                android:layout_width="0dp" 
+                android:layout_height="match_parent" 
+                android:layout_weight="1" >
+                <lin.house.inventory.wheelview.NumericWheelView android:id="@+id/scan_wheelview_product_number"  
+		            android:layout_height="match_parent"  
+		            android:layout_width="match_parent"/>
+            </LinearLayout> 
+            <!-- <LinearLayout  
+                android:layout_width="match_parent" 
+                android:layout_height="match_parent" 
+                android:background="@drawable/selector_scan_btn_add" 
+                android:clickable="true" 
+                android:focusable="true"  >
+                <TextView android:id="@+id/scan_tv_current_count" 
+                	android:background="@android:color/transparent"
+	                android:layout_width="match_parent" 
+	                android:layout_height="match_parent" 
+	                android:gravity="center" 
+	                android:text="1" 
+	                android:textSize="80sp" 
+	                android:textColor="@android:color/background_dark" />
+            </LinearLayout>-->
+            <!-- <Button
+                android:id="@+id/scan_btn_current_count"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" 
+                android:layout_weight="1" 
+                android:layout_marginLeft="0.5dp" 
+                android:layout_marginRight="0.5dp" 
+                android:background="@drawable/selector_scan_btn_add" 
+                android:gravity="center" 
+                android:layout_gravity="center"
+                android:text="1"
+                android:textSize="80sp"
+                android:textColor="#000000"  /> -->
+            
+            
+            <Button android:id="@+id/scan_btn_sub_count" 
+                android:layout_width="60dp" 
+                android:layout_height="match_parent" 
+                android:background="@drawable/selector_scan_btn_add" 
+                android:gravity="center" 
+                android:layout_gravity="center"
+                android:text="-" 
+                android:textSize="90sp" 
+                android:textColor="#000000" 
+                
+                android:onClick="btnSubCount" />
+	    </LinearLayout>
+    </LinearLayout>
+
+    <!-- 
+    <fragment
+        android:id="@+id/fragment_scan_lib"
+        android:name="lin.house.inventory.FragmentScanLib"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2" /> -->
+</LinearLayout>

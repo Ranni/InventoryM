@@ -1,5 +1,8 @@
 package lin.house.inventory.db;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import lin.house.inventory.entity.InventoryItemEntity;
 import android.content.ContentValues;
 import android.content.Context;
@@ -22,11 +25,11 @@ public class InventoryListDao {
     
     
     // 使用上面宣告的變數建立表格的SQL指令
-   
     public static String SQL_CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + " (" + 
     		//KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
     		COL_BARCODE_ID + " INTEGER NOT NULL, " +
     		COL_BARCODE_TITLE + " INTEGER NOT NULL, " +
+    		COL_INVENTORY_CNT + " INTEGER, "+
     		COL_INVENTORY_DATE + " TEXT NOT NULL)";
     
     // 資料庫物件    
@@ -62,7 +65,7 @@ public class InventoryListDao {
         // 第一個參數是表格名稱
         // 第二個參數是沒有指定欄位值的預設值
         // 第三個參數是包裝新增資料的ContentValues物件
-//        long id = db.insert(TABLE_NAME, null, cv);
+        long id = db.insert(TABLE_NAME, null, cv);
 // 
 //        // 設定編號
 //        item.setId(id);
@@ -71,8 +74,53 @@ public class InventoryListDao {
     }
     
     
+    // 修改參數指定的物件
+    public boolean update(InventoryItemEntity item) {
+        // 建立準備修改資料的ContentValues物件
+        ContentValues cv = new ContentValues();
+ 
+        // 加入ContentValues物件包裝的修改資料
+        // 第一個參數是欄位名稱， 第二個參數是欄位的資料        
+//        cv.put(COL_BARCODE_ID, 		item.getBarCodeId());
+        cv.put(COL_BARCODE_TITLE, 	item.getBarCodeTitle());
+        cv.put(COL_INVENTORY_CNT, 	item.getInventoryCnt());
+        cv.put(COL_INVENTORY_DATE, 	item.getInventoryDate());
+ 
+        // 設定修改資料的條件為編號
+        // 格式為「欄位名稱＝資料」
+//        String where = KEY_ID + "=" + item.getId();
+        String where = COL_BARCODE_ID + "=" + item.getBarCodeId();
+ 
+        // 執行修改資料並回傳修改的資料數量是否成功
+        return db.update(TABLE_NAME, cv, where, null) > 0;         
+    }
+ 
+    // 刪除參數指定編號的資料
+    public boolean deleteByBarcodeId(String barCodeId){
+        // 設定條件為編號，格式為「欄位名稱=資料」
+//        String where = KEY_ID + "=" + id;
+    	String where = COL_BARCODE_ID + "=" + barCodeId;
+        // 刪除指定編號資料並回傳刪除是否成功
+        return db.delete(TABLE_NAME, where , null) > 0;
+    }
+ 
+    // 讀取所有記事資料
+    public List<InventoryItemEntity> getAll() {
+        List<InventoryItemEntity> result = new ArrayList<InventoryItemEntity>();
+        Cursor cursor = db.query(TABLE_NAME, null, null, null, null, null, null, null);
+ 
+        while (cursor.moveToNext()) {
+            result.add(getRecord(cursor));
+        }
+ 
+        cursor.close();
+        return result;
+    }
+
+    
+    
     // 取得指定編號的資料物件
-    public InventoryItemEntity get(String barCodeId) {
+    public InventoryItemEntity getByBarcodeId(String barCodeId) {
         // 準備回傳結果用的物件
     	InventoryItemEntity item = null;
         // 使用編號為查詢條件
@@ -119,14 +167,14 @@ public class InventoryListDao {
     }
     
     // 建立範例資料
-    public void sample() {
-    	InventoryItemEntity item = new InventoryItemEntity("111", "barT_111", 4, "date-1");
-    	InventoryItemEntity item2 = new InventoryItemEntity("222", "barT_222", 3, "date-2");
-    	InventoryItemEntity item3 = new InventoryItemEntity("333", "barT_333", 2, "date-3");
- 
-        insert(item);
-        insert(item2);
-        insert(item3);
-    }
+//    public void sample() {
+//    	InventoryItemEntity item = new InventoryItemEntity("111", "barT_111", 4, "date-1");
+//    	InventoryItemEntity item2 = new InventoryItemEntity("222", "barT_222", 3, "date-2");
+//    	InventoryItemEntity item3 = new InventoryItemEntity("333", "barT_333", 2, "date-3");
+// 
+//        insert(item);
+//        insert(item2);
+//        insert(item3);
+//    }
     
 }

@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">庫存嘛</string>
+    <string name="app_name">庫存盤點</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-
+	
+    <!-- Scan activity -->
+    <string name="scan_default_production_title">產品名稱</string>
+    <string name="scan_action_unit">筆</string>
+    <string name="scan_record_production_count">上次記錄:</string>
+    <string name="scan_insert_action_add">新增</string>
+    <string name="scan_insert_action_sub">減少</string>
+    
+    
+    
 </resources>

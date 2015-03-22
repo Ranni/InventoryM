@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector 
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <!-- <item android:drawable="@drawable/border_scan_action_add_focus"   android:state_pressed="true"/>  
+    <item android:drawable="@drawable/border_scan_action_add_focus" android:state_focused="true"/> 
+    <item android:drawable="@drawable/border_scan_action_add" />   -->
+    
+	 <item android:state_pressed="true" >
+	        <shape>
+	            <!-- <solid android:color="#99cc99" /> -->
+	            <gradient
+	                android:startColor="#bbeebb"
+                	android:centerColor="#bbeebb"
+	                android:endColor="@android:color/white"
+	                android:angle="90" />
+	            <stroke
+	                android:width="0.5dp"
+	                android:color="@android:color/darker_gray" />
+	            <corners android:radius="2dp" />
+	            <padding
+	                android:left="10dp"
+	                android:top="10dp"
+	                android:right="10dp"
+	                android:bottom="10dp" />
+	        </shape>
+	    </item>
+	    
+	 <item android:state_focused="true" >
+	        <shape>
+	            <!-- <solid android:color="#99cc99" /> -->
+	            <gradient
+	                android:startColor="#bbeebb" 
+                	android:centerColor="#bbeebb"
+	                android:endColor="@android:color/white"
+	                android:angle="90" />
+	            <stroke
+	                android:width="0.5dp"
+	                android:color="@android:color/darker_gray" />
+	            <corners android:radius="2dp" />
+	            <padding
+	                android:left="10dp"
+	                android:top="10dp"
+	                android:right="10dp"
+	                android:bottom="10dp" />
+	        </shape>
+	    </item>
+	 
+     <item>
+        <shape>
+            <gradient
+                android:startColor="#bbeebb" 
+                android:endColor="@android:color/white"
+                android:angle="90" />
+   			<stroke
+                android:width="0.2dp"
+                android:color="@android:color/darker_gray" />
+            <corners
+                android:radius="2dp" />
+            <padding
+                android:left="10dp"
+                android:top="10dp"
+                android:right="10dp"
+                android:bottom="10dp" />
+        </shape>
+    </item>
+    <!-- <item android:drawable="@drawable/selector_ic_scan_add" ></item> -->
+</selector>
