@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<selector 
-    xmlns:android="http://schemas.android.com/apk/res/android" 
-    xmlns:custom="http://schemas.android.com/apk/res/lin.house.inventory" >
-    
-    <item android:drawable="@drawable/selector_ic_scan_add" android:state_enabled="true" custom:state_scan_add_to_start="true" />  
-    <item android:drawable="@drawable/selector_ic_scan_run" android:state_enabled="false" custom:state_scan_add_to_start="false" /> 
-    <!-- <item android:drawable="@drawable/selector_ic_scan_add" ></item> -->
-</selector>
