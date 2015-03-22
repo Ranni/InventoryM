@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!-- android:variablePadding="true"  -->
+    <item android:drawable="@drawable/ic_action_run_focus" android:state_pressed="true"/>
+     <item android:drawable="@drawable/ic_action_run_focus" android:state_focused="true"/>
+     
+    <item android:drawable="@drawable/ic_action_run" >
+       <!--  <padding android:bottom="45dp" android:left="45dp" android:right="45dp" android:top="45dp" />   -->
+    </item>
+</selector>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <!-- xmlns:custom="http://schemas.android.com/apk/res/lin.house.inventory" -->
+    
+    <LinearLayout android:id="@+id/linearL_main" 
+        android:layout_width="match_parent" 
+        android:layout_height="match_parent" 
+        android:weightSum="2" 
+        android:orientation="vertical" >
+        
+         <LinearLayout android:id="@+id/linearL_list" 
+	        android:layout_width="match_parent" 
+	        android:layout_height="match_parent" 
+	        android:layout_weight="1" 
+	        android:background="@drawable/border_dotted_main_list" >
+
+             <ImageView
+			        android:id="@+id/imageV_inventory_list" 
+			        android:src="@drawable/selector_ic_list" 
+        			android:padding="40dp"  
+				    android:layout_gravity="center"
+				    android:scaleType="fitCenter"
+				    android:layout_height="match_parent"
+				    android:layout_width="match_parent"     
+				    android:layout_marginLeft="5dp" 
+				    android:layout_marginRight="5dp" 
+				    android:onClick="scanProduct" 
+				    android:clickable="true"
+            		android:focusable="true"/>
+
+	    </LinearLayout>
+	    
+      <!--  <ImageView
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:src="@drawable/line_dotted" /> -->
+         
+        <LinearLayout android:id="@+id/linearL_scan" 
+	        android:layout_width="match_parent" 
+	        android:layout_height="match_parent" 
+	        android:layout_weight="1" 
+	        android:background="@drawable/border_main_action" 
+	        >
+	        
+            <!-- <ImageView
+		        android:id="@+id/scanner2" 
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent"
+		        android:layout_gravity="center" android:scaleType="FIT_CENTER"
+		        android:gravity="center" 
+		        android:background="@drawable/ic_action_add" 
+		        android:onClick="scanProduct" /> -->
+		       <ImageView
+			        android:id="@+id/imageV_scanner" 
+			        android:src="@drawable/selector_ic_scan_add" 
+				    android:layout_gravity="center" 
+				    android:scaleType="fitCenter"
+				    android:padding="40dp" 
+				    android:layout_height="match_parent"
+				    android:layout_width="match_parent"     
+				    android:layout_marginLeft="5dp" 
+				    android:layout_marginRight="5dp" 
+				    android:onClick="scanProduct" 
+				    android:clickable="true"
+            		android:focusable="true" />
+			
+            
+	    </LinearLayout>
+    </LinearLayout>
+    <!-- <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:layout_margin="20dp"
+        android:text="Scan"
+        android:textColor="#000000"
+        android:textSize="30dp" />
+
+    <Button
+        android:id="@+id/scanner"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:onClick="scanProduct"
+        android:text="QR Code"
+        android:textSize="18dp" >
+    </Button>
+
+    <Button
+        android:id="@+id/scanner2"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:onClick="scanProduct"
+        android:text="Bar Code"
+        android:textSize="18dp" >
+    </Button> -->
+
+</LinearLayout>
